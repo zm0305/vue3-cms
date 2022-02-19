@@ -1,5 +1,5 @@
 //axios实例
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 
 //1.axios的基本操作
 // axios

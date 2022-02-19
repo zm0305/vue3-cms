@@ -22,11 +22,21 @@ class MyRequest {
     //为所有的实例都添加拦截器，执行顺序为先
     this.instance.interceptors.request.use(
       (config) => {
-        console.log('所有的实例都有得拦截器：请求成功')
+        console.log('所有的实例都有的拦截器：请求成功')
         return config
       },
       (err) => {
-        console.log('所有的实例都有得拦截器：请求失败')
+        console.log('所有的实例都有的拦截器：请求失败')
+        return err
+      }
+    )
+    this.instance.interceptors.response.use(
+      (res) => {
+        console.log('所有的实例都有的拦截器：响应成功')
+        return res.data
+      },
+      (err) => {
+        console.log('所有的实例都有的拦截器：响应失败')
         return err
       }
     )
