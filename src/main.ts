@@ -8,6 +8,7 @@ import './service/axios_demo'
 
 import router from './router'
 import store from './store'
+import request from './service'
 
 const app = createApp(App)
 // globalRegister(app)
@@ -18,3 +19,18 @@ app.use(router)
 app.mount('#app')
 
 console.log(process.env.VUE_APP_BASE_URL)
+
+request.request({
+  url: '/home/multidata',
+  method: 'GET',
+  interceptors: {
+    requestInterceptor: (config) => {
+      console.log('单独请求的config')
+      return config
+    },
+    responseInterceptor: (res) => {
+      console.log('单独响应的config')
+      return res
+    }
+  }
+})
