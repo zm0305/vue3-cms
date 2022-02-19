@@ -4,6 +4,10 @@
     <router-link to="/login">登陆</router-link>
     <router-link to="/main">首页</router-link>
     <router-view></router-view>
+
+    <el-button>button</el-button>
+    <el-button type="primary">button</el-button>
+    <el-button type="danger">button</el-button>
   </div>
 </template>
 
