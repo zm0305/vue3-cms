@@ -7,6 +7,10 @@ const request = new MyRequest({
   interceptors: {
     requestInterceptor: (config) => {
       console.log('请求成功的拦截')
+      const token = ''
+      if (token && config.headers) {
+        config.headers.Authorization = `Bearer ${token}`
+      }
       return config
     },
     requestInterceptorCatch: (err) => {
