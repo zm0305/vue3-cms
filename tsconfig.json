@@ -1,22 +1,36 @@
 {
   "compilerOptions": {
+    //目标代码（ts-> js(es5/6/7)）
     "target": "esnext",
+    //目标代码需要使用的模块化方案（commonjs requeire/module.exports/es module import/export）
     "module": "esnext",
+    //打开严格模式
     "strict": true,
+    //对jsx怎么处理，perserve：保留
     "jsx": "preserve",
+    //辅助的导入功能
     "importHelpers": true,
+    //按照node的方式去解析模块 import
     "moduleResolution": "node",
+    //跳过对一些库的类型检测，比如跳过对axios、lodash的类型检查，浪费性能
     "skipLibCheck": true,
+    //这两个一般一起配置，表示esmodule和commonjs能否一起使用
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    //是否要生成映射文件，ts->js
     "sourceMap": true,
+    //文件路径在解析时基本的url
     "baseUrl": ".",
+    //指定具体要解析使用的类型
     "types": ["webpack-env"],
+    //编译阶段的路径解析，项目中使用到了@/*都代表src/*，相当于webpack中的alias
     "paths": {
       "@/*": ["src/*"]
     },
+    //指定在项目中可以使用哪些库的类型
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
+  //表示当前有哪些类型的文件是需要解析的
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
@@ -24,5 +38,6 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
+  //排除不需要解析的路径
   "exclude": ["node_modules"]
 }
